@@ -1,0 +1,37 @@
+{
+    "id": "65564c4e0565b559e46dfb2d",
+    "roles": [
+        {
+            "name": "admin",
+            "apply_when": {
+                "%%user.custom_data.isGlobalAdmin": true
+            },
+            "document_filters": {
+                "write": true,
+                "read": true
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true
+        },
+        {
+            "name": "user",
+            "apply_when": {},
+            "document_filters": {
+                "write": {
+                    "owner_id": "%%user.id"
+                },
+                "read": {
+                    "owner_id": "%%user.id"
+                }
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true
+        }
+    ]
+}
