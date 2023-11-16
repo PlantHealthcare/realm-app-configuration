@@ -16,6 +16,25 @@
             "insert": true,
             "delete": true,
             "search": true
+        },
+        {
+            "name": "user",
+            "apply_when": {
+                "%%user.custom_data.role": "default"
+            },
+            "document_filters": {
+                "write": {
+                    "user_id": "%%user.id"
+                },
+                "read": {
+                    "user_id": "%%user.id"
+                }
+            },
+            "read": true,
+            "write": true,
+            "insert": true,
+            "delete": true,
+            "search": true
         }
     ]
 }
