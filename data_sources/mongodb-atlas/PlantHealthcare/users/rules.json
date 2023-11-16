@@ -1,21 +1,4 @@
 {
     "collection": "users",
-    "database": "PlantHealthcare",
-    "roles": [
-        {
-            "name": "admin",
-            "apply_when": {
-                "%%user.custom_data.role": "admin"
-            },
-            "document_filters": {
-                "write": true,
-                "read": true
-            },
-            "read": true,
-            "write": true,
-            "insert": true,
-            "delete": true,
-            "search": true
-        }
-    ]
+    "database": "PlantHealthcare"
 }
