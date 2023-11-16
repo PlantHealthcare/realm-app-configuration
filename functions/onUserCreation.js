@@ -8,8 +8,7 @@ exports = async function onUserCreation(user) {
       // Save the user's account ID to your configured user_id_field
       user_id: user.id,
       // Store any other user data you want
-      name: user.data.name,
-      role: user.data.role
+      role: "default"
     });
   } catch (e) {
     console.error(`Failed to create custom user data document for user:${user.id}`);

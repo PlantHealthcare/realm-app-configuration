@@ -4,10 +4,6 @@
         "private": true
     },
     {
-        "name": "onUserCreation2",
-        "private": false
-    },
-    {
         "name": "onUserCreation",
         "private": false
     }
