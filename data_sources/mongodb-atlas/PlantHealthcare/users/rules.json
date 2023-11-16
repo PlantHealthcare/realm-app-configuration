@@ -3,8 +3,10 @@
     "database": "PlantHealthcare",
     "roles": [
         {
-            "name": "readAndWriteAll",
-            "apply_when": {},
+            "name": "admin",
+            "apply_when": {
+                "%%user.custom_data.role": "admin"
+            },
             "document_filters": {
                 "write": true,
                 "read": true
