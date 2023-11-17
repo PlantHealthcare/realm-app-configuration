@@ -30,6 +30,12 @@
                     "user_id": "%%user.id"
                 }
             },
+            "fields": {
+                "role": {
+                    "write": false,
+                    "read": true
+                }
+            },
             "read": true,
             "write": true,
             "insert": true,
