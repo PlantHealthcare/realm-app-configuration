@@ -24,13 +24,13 @@ exports = async function(changeEvent) {
   const plant = changeEvent.fullDocument;
   var careNeeded = false;
   
-  if (plant.temperature > plant.plantSpecie.max_temp && plant.temperature < plant.plantSpecie.min_temp) {
+  if (plant.temperature > plant.plantSpecie.max_temp || plant.temperature < plant.plantSpecie.min_temp) {
     careNeeded = true;
   }
-  if (plant.humidity > plant.plantSpecie.max_env_humid && plant.humidity < plant.plantSpecie.min_env_humid) {
+  if (plant.humidity > plant.plantSpecie.max_env_humid || plant.humidity < plant.plantSpecie.min_env_humid) {
     careNeeded = true;
   }
-  if (plant.soil_moist > plant.plantSpecie.max_soil_moist && plant.soil_moist < plant.plantSpecie.min_soil_moist) {
+  if (plant.soil_moist > plant.plantSpecie.max_soil_moist || plant.soil_moist < plant.plantSpecie.min_soil_moist) {
     careNeeded = true;
   }
 
