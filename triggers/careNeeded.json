@@ -1,0 +1,29 @@
+{
+    "id": "6560c540a8f5ec31afb01d34",
+    "name": "careNeeded",
+    "type": "DATABASE",
+    "config": {
+        "operation_types": [
+            "UPDATE"
+        ],
+        "database": "PlantHealthcare",
+        "collection": "userplants",
+        "service_name": "mongodb-atlas",
+        "match": {},
+        "project": {},
+        "full_document": true,
+        "full_document_before_change": false,
+        "unordered": false,
+        "skip_catchup_events": false,
+        "tolerate_resume_errors": false,
+        "maximum_throughput": false
+    },
+    "disabled": false,
+    "event_processors": {
+        "FUNCTION": {
+            "config": {
+                "function_name": "careNeededCheck"
+            }
+        }
+    }
+}
