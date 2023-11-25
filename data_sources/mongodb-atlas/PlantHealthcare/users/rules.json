@@ -18,6 +18,18 @@
             "search": true
         },
         {
+            "name": "device-manufacturer",
+            "apply_when": {
+                "%%user.custom_data.role": "device-manufacturer"
+            },
+            "document_filters": {},
+            "read": true,
+            "write": false,
+            "insert": false,
+            "delete": false,
+            "search": true
+        },
+        {
             "name": "user",
             "apply_when": {},
             "document_filters": {
