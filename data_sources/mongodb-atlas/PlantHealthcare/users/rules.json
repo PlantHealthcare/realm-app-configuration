@@ -19,27 +19,17 @@
         },
         {
             "name": "user",
-            "apply_when": {
-                "%%user.custom_data.role": "default"
-            },
+            "apply_when": {},
             "document_filters": {
-                "write": {
-                    "user_id": "%%user.id"
-                },
+                "write": false,
                 "read": {
                     "user_id": "%%user.id"
                 }
             },
-            "fields": {
-                "role": {
-                    "write": false,
-                    "read": true
-                }
-            },
             "read": true,
-            "write": true,
-            "insert": true,
-            "delete": true,
+            "write": false,
+            "insert": false,
+            "delete": false,
             "search": true
         }
     ]
