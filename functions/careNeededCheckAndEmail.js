@@ -54,8 +54,8 @@ exports = async function(changeEvent) {
     const sgMail = require("@sendgrid/mail");
     sgMail.setApiKey(apiKey);
     const msg = {
-      to: useremail,
-      from: {"email": "planthealthcareapp@gmail.com"},
+      to: "galateanmarcell96@gmail.com",
+      from: "planthealthcareapp@gmail.com",
       subject: "Care needed for plant",
       text: message,
     };
