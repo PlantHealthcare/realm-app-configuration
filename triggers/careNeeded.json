@@ -22,7 +22,7 @@
     "event_processors": {
         "FUNCTION": {
             "config": {
-                "function_name": "careNeededCheck"
+                "function_name": "careNeededCheckAndEmail"
             }
         }
     }

@@ -8,11 +8,7 @@
         "private": false
     },
     {
-        "name": "careNeededCheck",
+        "name": "careNeededCheckAndEmail",
         "private": true
-    },
-    {
-        "name": "careNeededEmail",
-        "private": false
     }
 ]

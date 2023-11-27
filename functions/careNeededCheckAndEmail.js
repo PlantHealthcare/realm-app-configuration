@@ -10,7 +10,7 @@ exports = async function(changeEvent) {
   // Get the MongoDB service you want to use (see "Linked Data Sources" tab)
   const serviceName = "mongodb-atlas";
   const databaseName = "PlantHealthcare";
-  const collection = context.services.get(serviceName).db(databaseName).collection(changeEvent.ns.coll);
+  const userplants = context.services.get(serviceName).db(databaseName).collection(changeEvent.ns.coll);
   
   /*
   try {
@@ -22,6 +22,7 @@ exports = async function(changeEvent) {
   */
   
   const plant = changeEvent.fullDocument;
+  const initialCareNeeded = plant.careNeeded;
   var careNeeded = false;
   
   if (plant.temperature > plant.plantSpecie.max_temp || plant.temperature < plant.plantSpecie.min_temp) {
@@ -35,11 +36,28 @@ exports = async function(changeEvent) {
   }
 
   try {
-    await collection.updateOne(
+    await userplants.updateOne(
       { _id: docId },
       { $set: { careNeeded: careNeeded } }
     );
   } catch(err) {
     console.log("error updateing plant: ", err.message);
   }
+  
+  if (initialCareNeeded == false && careNeeded == true) {
+    
+    let apiKey = context.values.get("sendgrid_api_key_value");
+    const user = context.services.get(serviceName).db(databaseName).collection(users).findOne({user_id: plant.user_id});
+  
+    const sgMail = require('@sendgrid/mail');
+    sgMail.setApiKey(apiKey);
+    const msg = {
+      to: user.email,
+      from: 'planthealthcareapp@gmail.com',
+      subject: 'Care needed for plant',
+      text: 'Care needed for plant: ' + plant.name,
+    };
+    await sgMail.send(msg);
+  }
+
 };
