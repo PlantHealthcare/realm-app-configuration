@@ -10,5 +10,9 @@
     {
         "name": "careNeededCheck",
         "private": true
+    },
+    {
+        "name": "careNeededEmail",
+        "private": false
     }
 ]
