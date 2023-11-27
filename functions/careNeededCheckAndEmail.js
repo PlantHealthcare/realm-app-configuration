@@ -47,7 +47,7 @@ exports = async function(changeEvent) {
   if (initialCareNeeded == false && careNeeded == true) {
     
     let apiKey = context.values.get("sendgrid_api_key_value");
-    const user = context.services.get(serviceName).db(databaseName).collection(users).findOne({user_id: plant.user_id});
+    const user = context.services.get(serviceName).db(databaseName).collection("users").findOne({user_id: plant.user_id});
   
     const sgMail = require('@sendgrid/mail');
     sgMail.setApiKey(apiKey);
