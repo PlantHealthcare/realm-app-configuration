@@ -48,13 +48,13 @@ exports = async function(changeEvent) {
     
     let apiKey = context.values.get("sendgrid_api_key_value");
     const user = context.services.get(serviceName).db(databaseName).collection("users").findOne({user_id: plant.user_id});
-    //const useremail = "" + user.email;
+    const useremail = "" + user.email;
     const message = "Care needed for plant: " + plant.name;
   
     const sgMail = require("@sendgrid/mail");
     sgMail.setApiKey(apiKey);
     const msg = {
-      to: "" + user.email,
+      to: "" + useremail,
       from: "planthealthcareapp@gmail.com",
       subject: "Care needed for plant",
       text: message,
