@@ -1,4 +1,4 @@
-exports = function() {
+exports = async function() {
   
   let apiKey = context.values.get("sendgrid_api_key");
   
@@ -10,6 +10,6 @@ exports = function() {
     subject: 'Care needed for plant',
     text: 'Care needed for plant',
   }
-  sgMail.send(msg)
+  await sgMail.send(msg)
 
 };
