@@ -55,7 +55,7 @@ exports = async function(changeEvent) {
     sgMail.setApiKey(apiKey);
     const msg = {
       to: email,
-      from: "planthealthcareapp@gmail.com",
+      from: {"email": "planthealthcareapp@gmail.com"},
       subject: "Care needed for plant",
       text: message,
     };
