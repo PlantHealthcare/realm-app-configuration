@@ -30,7 +30,7 @@ exports = async function(changeEvent) {
   if (plant.humidity > plant.plantSpecie.max_env_humid || plant.humidity < plant.plantSpecie.min_env_humid) {
     careNeeded = true;
   }
-  if (plant.soil_moist > plant.plantSpecie.max_soil_moist || plant.soil_moist < plant.plantSpecie.min_soil_moist) {
+  if (plant.soil_moisturet > plant.plantSpecie.max_soil_moist || plant.soil_moisture < plant.plantSpecie.min_soil_moist) {
     careNeeded = true;
   }
 
